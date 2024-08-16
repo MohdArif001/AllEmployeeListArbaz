@@ -1,0 +1,120 @@
+﻿
+<h1>IFTM TOP Passout Student List </h1>
+<button class="btn-sm btn-primary m10" id="btnAddEmployee">Add Student Details</button>
+<table class="table table-bordered">
+    <thead>
+        <tr class="text-center">
+           @*  <th>S.No</th> *@
+            <th>Name</th>
+            <th>Age</th>
+            @* <th>Salary</th> *@
+            <th>Gender</th>
+            @* <th>City</th> *@
+            <th>UserName</th>
+            <th>Country</th>
+            <th>State</th>
+            <th>City</th>
+
+            @* <th>Password</th>
+            <th>Confirm Password</th> *@
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody id="TableData" class="text-center"> </tbody>
+</table>
+ 
+    @* Model PopUp header*@
+<div class="modal fade" id="EmployeePopUp">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="text-info modal-title" id="Addemp">Add Student Details</h1>
+                <h1 class="text-info modal-title" id="editemp">Edit Student details</h1>
+
+            </div>
+                                                                                       @* Modal PopUp Body *@
+            <div class="modal-body">
+                <form method="post" id="my-form">
+                    <div class="form-group" id="empids">
+                        <label>Id</label>
+                        <input type="text" class="form-control" id="empid" disabled="disabled" />
+                    </div>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" placeholder="Enter Name" value="" class="form-control" id="Name" required maxlength="120" autocomplete="off" />
+                    </div>
+                    <div class="form-group">
+                        <label>Age</label>
+                        <input type="number" placeholder="Enter Age" value="" class="form-control" id="Age" required autocomplete="off"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Salary</label>
+                        <input type="number" placeholder="Enter Salary" value="" class="form-control" id="Salary"required autocomplete="off" />
+                    </div> <br />
+                    @* <div class="form-control"> *@
+                    @* <label class="form-control">Gender</label> *@
+                    <select class="form-control" name="Gender" id="Gender" required>
+                        <option value="">Select Gender </option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="TransGender">TransGender</option>
+                        <option value="Custom">Custom</option>
+                    </select>
+                    @*  <div class="form-group">
+                    <label>Gender</label>
+                    <input type="text" placeholder="Enter Gender" class="form-control" id="Gender" />
+                    </div>*@
+                    @* <div class="form-group">
+                        <label>City</label>
+                        <input type="text" placeholder="Enter City" class="form-control" id="City" required />
+                    </div> *@
+                    <br />
+                    <div class="form-group">
+                        <select  class="form-control" id="country">
+                            <option>---Select Country---</option>
+                        </select>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <select class="form-control" id="state">
+                            <option>---Select State---</option>
+                        </select>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <select class="form-control" id="city">
+                            <option>---Select City---</option>
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="Enter Email " value="" class="form-control" id="UserName" maxlength="80" required autocomplete="off"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="text" placeholder="Enter Password" value="" class="form-control" id="Password" maxlength="20" required autocomplete="off" />
+                    </div>
+                    <div class="form-group">
+                        <label>Confirm Password</label>
+                        <input type="text" placeholder="Enter Confirm Password" value="" class="form-control" id="ConfirmPassword" maxlength="20" required />
+                    </div>
+                    
+                </form>
+                <div class="modal-footer">
+                    <button class="btn btn-primary " onclick="AddEmployee();" id="SaveData">Save</button>
+                    <button class="btn btn-warning " id="btnUpdate" onclick="Update();" type="button">Update</button>
+                    <button class="btn btn-dander btn-default" data-dismiss="modal" onclick="CloseModal();">Close</button>
+                </div>
+                </div>
+                                                                                     @* buttons with function *@
+          
+        </div>
+    </div>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/js/Custom.js"></script>
+
